@@ -56,4 +56,4 @@ public class User implements UserDetails{
         return roles.stream()
                 .map(SimpleGrantedAuthority::new)
                 .toList();
-}
+    }}
