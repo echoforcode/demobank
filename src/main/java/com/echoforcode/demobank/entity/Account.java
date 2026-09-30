@@ -7,6 +7,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 @Entity
+@Table(name = "account", uniqueConstraints = @UniqueConstraint(
+        name = "uk_account_owner_code", columnNames = {"owner_id", "code"}))
 @Getter
 @Setter
 @Builder
@@ -21,6 +23,7 @@ public class Account {
     @Column(nullable = false, unique = true)
     private long accountNumber;
     private String currency;
+    @Column(nullable = false, length = 3)
     private String code;
     private String label;
     private char symbol;
@@ -28,8 +31,8 @@ public class Account {
     private LocalDateTime createdAt;
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-    @ManyToOne
-    @JoinColumn(name = "owner_id")//foreign key
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "owner_id",nullable = false)//foreign key
     private User owner;
     @OneToMany(mappedBy = "account",
             cascade = CascadeType.ALL, fetch = FetchType.LAZY)
