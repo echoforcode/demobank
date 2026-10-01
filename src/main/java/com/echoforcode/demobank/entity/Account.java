@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.math.BigDecimal;
 @Entity
 @Table(name = "account", uniqueConstraints = @UniqueConstraint(
         name = "uk_account_owner_code", columnNames = {"owner_id", "code"}))
@@ -18,7 +19,9 @@ public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String accountId;
-    private double balance;
+    //change from double to bd
+    @Column(nullable = false, precision = 19, scale = 2)
+    private BigDecimal balance;
     private String accountName;
     @Column(nullable = false, unique = true)
     private long accountNumber;

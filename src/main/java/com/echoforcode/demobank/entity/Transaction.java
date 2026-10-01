@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
+import java.math.BigDecimal;
 @Entity
 @Getter
 @Setter
@@ -15,8 +16,11 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String txId;
-    private Double amount;
-    private Double txFee;
+    //change from double to bigdecimal
+    @Column(precision=19,scale=2)
+    private BigDecimal amount;
+    @Column(precision = 19, scale = 2)
+    private BigDecimal txFee;
     private String sender;
     private String receiver;
     @CreationTimestamp

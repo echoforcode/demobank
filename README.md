@@ -1,5 +1,6 @@
 1. docker starts
    docker compose up -d db
+   docker compose exec db psql -U bank_dev -d bank_db
 
 2. springboot starts
    ./mvnw -DskipTests package
