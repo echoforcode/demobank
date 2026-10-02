@@ -4,6 +4,10 @@ import com.echoforcode.demobank.dto.AccountDto;
 import com.echoforcode.demobank.dto.AccountResponse;
 import com.echoforcode.demobank.entity.User;
 import com.echoforcode.demobank.service.AccountService;
+import com.echoforcode.demobank.service.TransferService;
+import com.echoforcode.demobank.service.ExchangeRateService;
+import com.echoforcode.demobank.dto.TransferDto;
+import com.echoforcode.demobank.dto.TransferResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +20,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AccountController {
     private final AccountService accountService;
+    private final TransferService transferService;
+    private final ExchangeRateService exchangeRateService;
 
     @PostMapping
     public ResponseEntity<AccountResponse> createAccount(
@@ -30,4 +36,15 @@ public class AccountController {
             @AuthenticationPrincipal User user) {
         return accountService.getUserAccounts(user.getUid());
     }
+    @PostMapping("/transfer")
+    public TransferResponse transfer(@Valid @RequestBody TransferDto dto,
+                                     @AuthenticationPrincipal User user) {
+        return transferService.transfer(dto, user);
+    }
+    @GetMapping("/rate")
+    public ExchangeRateService.RateSnapshot rates() {
+        return exchangeRateService.current();
+    }
 }
+
+

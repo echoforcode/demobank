@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 import java.util.Locale;
 import java.util.Map;
+import java.math.BigDecimal;
 @Component
 @RequiredArgsConstructor
 public class AccountHelper {
@@ -41,7 +42,8 @@ public class AccountHelper {
         }
         var account = Account.builder()
                 .accountNumber(newAccountNumber())
-                .balance(1000.0) // Fictional demo funds, matching the video.
+                .balance(new BigDecimal("1000")) // Fictional demo funds, matching the video.
+                .accountName(user.getFirstname() + " " + user.getLastname())
                 .owner(user)
                 .code(code).label(currency.label()).symbol(currency.symbol())
                 .build();
