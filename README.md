@@ -8,3 +8,6 @@
 
 3. set the jwt
 4. export JWT_SECRET="$(openssl rand -base64 32)"
+
+docker compose exec -T db psql -U bank_dev -d bank_db \
+-v ON_ERROR_STOP=1 < sql/conversion-type.sql
