@@ -4,7 +4,6 @@ import com.echoforcode.demobank.dto.ConvertDto;
 import com.echoforcode.demobank.dto.ConversionResponse;
 import com.echoforcode.demobank.entity.*;
 import com.echoforcode.demobank.repository.AccountRepository;
-import com.echoforcode.demobank.repository.TransactionRepository;
 import com.echoforcode.demobank.util.FxMath;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,7 +17,7 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class ConversionService {
     private final AccountRepository accounts;
-    private final TransactionRepository transactions;
+    private final TransactionService transactions;
     private final ExchangeRateService exchangeRateService;
     private static final BigDecimal MAX_BALANCE =
             new BigDecimal("99999999999999999.99");
@@ -71,7 +70,7 @@ public class ConversionService {
                 quote.amount(), quote.fee(), Type.CONVERSION);
         Transaction credit = entry(destination, fromNumber, toNumber,
                 quote.convertedAmount(), BigDecimal.ZERO, Type.DEPOSIT);
-        transactions.saveAllAndFlush(List.of(debit, credit));
+        transactions.persist(List.of(debit, credit));
         return new ConversionResponse(debit.getTxId(), credit.getTxId(),
                 from, to, quote.amount(), quote.fee(), quote.totalDebited(),
                 quote.convertedAmount(), source.getBalance(), newBalance,
@@ -87,10 +86,8 @@ public class ConversionService {
     }
     private Transaction entry(Account account, long from, long to,
                               BigDecimal amount, BigDecimal fee, Type type) {
-        return Transaction.builder().account(account).owner(account.getOwner())
-                .sender(Long.toString(from)).receiver(Long.toString(to))
-                .amount(amount).txFee(fee).type(type)
-                .status(Status.COMPLETED).build();
+        return transactions.accountEntry(account, amount, fee, type,
+                Long.toString(from), Long.toString(to));
     }
     private ResponseStatusException error(HttpStatus status, String message) {
             return new ResponseStatusException(status, message);

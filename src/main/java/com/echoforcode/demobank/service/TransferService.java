@@ -4,7 +4,6 @@ import com.echoforcode.demobank.dto.TransferDto;
 import com.echoforcode.demobank.dto.TransferResponse;
 import com.echoforcode.demobank.entity.*;
 import com.echoforcode.demobank.repository.AccountRepository;
-import com.echoforcode.demobank.repository.TransactionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -18,7 +17,7 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class TransferService {
     private final AccountRepository accounts;
-    private final TransactionRepository transactions;
+    private final TransactionService transactions;
     private static final BigDecimal FEE_RATE = new BigDecimal("0.01");
     private static final BigDecimal MAX_BALANCE =
             new BigDecimal("99999999999999999.99");
@@ -73,7 +72,7 @@ public class TransferService {
                 amount, fee, Type.WITHDRAW);
         Transaction deposit = entry(recipient, sender, recipient,
                 amount, BigDecimal.ZERO, Type.DEPOSIT);
-        transactions.saveAllAndFlush(List.of(withdrawal, deposit));
+        transactions.persist(List.of(withdrawal, deposit));
         return new TransferResponse(withdrawal.getTxId(), code, amount,
                 fee, debit, sender.getBalance(), recipientNumber, "COMPLETED");
     }
@@ -83,12 +82,9 @@ public class TransferService {
     }
     private Transaction entry(Account account, Account sender,
                               Account recipient, BigDecimal amount, BigDecimal fee, Type type) {
-        return Transaction.builder()
-                .account(account).owner(account.getOwner())
-                .sender(Long.toString(sender.getAccountNumber()))
-                .receiver(Long.toString(recipient.getAccountNumber()))
-                .amount(amount).txFee(fee).type(type)
-                .status(Status.COMPLETED).build();
+        return transactions.accountEntry(account, amount, fee, type,
+                Long.toString(sender.getAccountNumber()),
+                Long.toString(recipient.getAccountNumber()));
     }
     private ResponseStatusException error(HttpStatus status, String message) {
             return new ResponseStatusException(status, message);
