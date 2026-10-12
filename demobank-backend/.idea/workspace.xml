@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e67c2c45-e043-4352-868e-9de20ef297c8" name="Changes" comment="readme" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseLocalColorSettings">
+    <colors>
+      <entry key="def13199-6ee0-42d9-a39c-5c9bebcbaf8d" value="" />
+    </colors>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;echoforcode&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/echoforcode/demobank.git&quot;,
+    &quot;accountId&quot;: &quot;d5d4d971-c532-42fb-8462-8bffe8d51bc1&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/sql/card-money.sql" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/sql/transaction-check.sql" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0000000000258689" />
+      <entry key="MS500" value="1.0083248851193494" />
+      <entry key="S2" value="1.4889491812901738" />
+      <entry key="S5" value="2.3468767594054922" />
+      <entry key="S10" value="2.9786887679882965" />
+      <entry key="S30" value="3.7500301709664683" />
+      <entry key="S60" value="4.574347920796823" />
+      <entry key="M2" value="6.000924690822945" />
+      <entry key="M5" value="8.165643658367301" />
+      <entry key="M10" value="9.426079103621209" />
+      <entry key="M15" value="10.131124520909403" />
+      <entry key="M30" value="12.610394732019083" />
+      <entry key="H1" value="21.43283756303417" />
+      <entry key="H2" value="42.82829410520922" />
+      <entry key="H4" value="71.37042310389124" />
+      <entry key="D1" value="118.3674260388603" />
+      <entry key="W1" value="129.94105679751607" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="1.4854263437789666E-210" />
+      <entry key="S10" value="1.717041556326545E-105" />
+      <entry key="S30" value="2.2443619415782465E-35" />
+      <entry key="S60" value="9.39066380281566E-18" />
+      <entry key="M2" value="7.3316842910929045E-9" />
+      <entry key="M5" value="0.001844376020893245" />
+      <entry key="M10" value="0.12318251441881062" />
+      <entry key="M15" value="0.5118826844101843" />
+      <entry key="M30" value="2.274887932657201" />
+      <entry key="H1" value="5.918998777220427" />
+      <entry key="H2" value="12.182459384636743" />
+      <entry key="H4" value="19.522459239256218" />
+      <entry key="D1" value="30.82152435846481" />
+      <entry key="W1" value="33.52208281293027" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.2779034072715502E-7" />
+      <entry key="MS500" value="0.05007857231934049" />
+      <entry key="S2" value="0.9403484714907024" />
+      <entry key="S5" value="2.0740052132313602" />
+      <entry key="S10" value="2.8312773539306795" />
+      <entry key="S30" value="3.698192908543422" />
+      <entry key="S60" value="4.548024704022116" />
+      <entry key="M2" value="5.98760845719738" />
+      <entry key="M5" value="8.162085829272016" />
+      <entry key="M10" value="9.546274595783625" />
+      <entry key="M15" value="10.640421573703774" />
+      <entry key="M30" value="14.882373299174382" />
+      <entry key="H1" value="27.347886678260913" />
+      <entry key="H2" value="55.00609641291698" />
+      <entry key="H4" value="90.88886112649152" />
+      <entry key="D1" value="149.187829936575" />
+      <entry key="W1" value="163.46296392176845" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="3GqHgSfjBDHNCLNbDYZmQjLp66y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Git.CreateWorkingTree.LastParentPath&quot;: &quot;/Users/echo/project&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/echo/demobank/demobank-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.echoforcode.demobank.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-a203e0a19954-intellij.indexing.shared.core-IU-262.10315.125" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.10315.125" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e67c2c45-e043-4352-868e-9de20ef297c8" name="Changes" comment="" />
+      <created>1784692289228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1784692289228</updated>
+      <workItem from="1784692290281" duration="4776000" />
+      <workItem from="1784863774738" duration="777000" />
+      <workItem from="1785840937128" duration="153000" />
+      <workItem from="1789996725127" duration="617000" />
+      <workItem from="1790046940573" duration="2201000" />
+      <workItem from="1790049993532" duration="1227000" />
+      <workItem from="1790133267022" duration="4011000" />
+      <workItem from="1790221985651" duration="3434000" />
+      <workItem from="1790311114410" duration="19000" />
+      <workItem from="1790311140138" duration="3727000" />
+      <workItem from="1790332487988" duration="1345000" />
+      <workItem from="1790428700384" duration="666000" />
+      <workItem from="1790564322380" duration="15000" />
+      <workItem from="1790564347281" duration="4175000" />
+      <workItem from="1790569103091" duration="159000" />
+      <workItem from="1790653504598" duration="6373000" />
+      <workItem from="1790690055598" duration="210000" />
+      <workItem from="1790690280349" duration="247000" />
+      <workItem from="1790690532450" duration="18000" />
+      <workItem from="1790690675478" duration="627000" />
+      <workItem from="1790737665123" duration="4000" />
+      <workItem from="1790737671953" duration="5565000" />
+      <workItem from="1790759906400" duration="2502000" />
+      <workItem from="1790822609830" duration="3984000" />
+      <workItem from="1790861248838" duration="2345000" />
+      <workItem from="1790913894606" duration="3846000" />
+      <workItem from="1790925855189" duration="1931000" />
+      <workItem from="1791425637621" duration="44000" />
+      <workItem from="1791425685136" duration="1290000" />
+      <workItem from="1791453700454" duration="871000" />
+      <workItem from="1791513446289" duration="4161000" />
+      <workItem from="1791603246823" duration="3154000" />
+      <workItem from="1791621899165" duration="3956000" />
+      <workItem from="1791776789279" duration="668000" />
+      <workItem from="1791780227469" duration="10000" />
+      <workItem from="1791801142221" duration="971000" />
+    </task>
+    <task id="LOCAL-00001" summary="authentication">
+      <option name="closed" value="true" />
+      <created>1790564523155</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1790564523155</updated>
+    </task>
+    <task id="LOCAL-00002" summary="authentication 2">
+      <option name="closed" value="true" />
+      <created>1790569128401</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1790569128401</updated>
+    </task>
+    <task id="LOCAL-00003" summary="login and register">
+      <option name="closed" value="true" />
+      <created>1790690150992</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1790690150992</updated>
+    </task>
+    <task id="LOCAL-00004" summary=" add account">
+      <option name="closed" value="true" />
+      <created>1790762883833</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1790762883833</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change to bigdecimal">
+      <option name="closed" value="true" />
+      <created>1790861295906</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1790861295906</updated>
+    </task>
+    <task id="LOCAL-00006" summary="transfer settings and exchangerates">
+      <option name="closed" value="true" />
+      <created>1790917719811</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1790917719811</updated>
+    </task>
+    <task id="LOCAL-00007" summary="conversion part1">
+      <option name="closed" value="true" />
+      <created>1791453737687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1791453737687</updated>
+    </task>
+    <task id="LOCAL-00008" summary="conversion part2&#10;card part1">
+      <option name="closed" value="true" />
+      <created>1791517523478</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1791517523478</updated>
+    </task>
+    <task id="LOCAL-00009" summary="card part2">
+      <option name="closed" value="true" />
+      <created>1791625829607</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1791625829607</updated>
+    </task>
+    <task id="LOCAL-00010" summary="readme">
+      <option name="closed" value="true" />
+      <created>1791625958536</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1791625958536</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="authentication" />
+    <MESSAGE value="authentication 2" />
+    <MESSAGE value="login and register" />
+    <MESSAGE value=" add account" />
+    <MESSAGE value="change to bigdecimal" />
+    <MESSAGE value="transfer settings and exchangerates" />
+    <MESSAGE value="conversion part1" />
+    <MESSAGE value="conversion part2&#10;card part1" />
+    <MESSAGE value="card part2" />
+    <MESSAGE value="readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.BeanCreationException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
