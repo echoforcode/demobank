@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthLayout from '../components/AuthLayout.jsx';
 import InputComponent from '../components/InputComponent.jsx';
+import{validateUser} from '../helper/ValidateUser.jsx';
 const fields = [
     ['firstname', 'First name', 'text', true],
     ['lastname', 'Last name', 'text', true],
@@ -18,15 +19,21 @@ export default function Register() {
         gender: '', password: '', confirmPassword: '',
     });
     const [message, setMessage] = useState('');
+    const[errors, setErrors] = useState({});
+
     function change(event) {
     const { name, value } = event.target;
     setForm(previous => ({ ...previous, [name]: value }));
     }
     function submit(event) {
     event.preventDefault();
-    setMessage('Form captured locally. Validation comes next.');
+    const nextErrors = validateUser(form);
+    setErrors(nextErrors);
+    setMessage('');
+    if (Object.keys(nextErrors).length > 0) return;
+    setMessage('Form is valid. API connection comes later.');
 }
-}
+
 return (
     <AuthLayout title="Create your account"
         footer={<Link className="link" to="/login">Log in</Link>}>
@@ -34,7 +41,7 @@ return (
             {fields.map(([name, label, type, required]) => (
             <InputComponent key={name} name={name} label={label}
                 type={type} required={required}
-                value={form[name]} onChange={change}
+                value={form[name]} onChange={change} error={errors[name]}
             autoComplete={type === 'password' ? 'new-password' : undefined} />
     ))}
         <label className="flex flex-col gap-1.5 text-sm">
@@ -52,3 +59,4 @@ return (
         </form>
     </AuthLayout>
 );
+}

@@ -1,4 +1,4 @@
-export function ValidateUser(user) {
+export function validateUser(user) {
     const errors = {};
     for (const field of ['firstname', 'lastname', 'username']) {
         if (!user[field].trim()) errors[field] = 'This field is required.';

@@ -5,6 +5,9 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import RegisterSuccessful from './pages/RegisterSuccessful.jsx';
 import Dashboard from './pages/Dashboard.jsx';
+import { useSelector } from 'react-redux';
+import Spinner from './components/Spinner.jsx';
+import { selectSpinner } from './features/pageSlice.js';
 
 const router = createBrowserRouter([
 { path: '/', element: <Navigate to="/login" replace /> },
@@ -15,5 +18,11 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-return <RouterProvider router={router} />;
+    const showSpinner = useSelector(selectSpinner);
+    return (
+        <>
+            <RouterProvider router={router} />
+            {showSpinner && <Spinner />}
+        </>
+);
 }

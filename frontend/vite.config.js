@@ -5,4 +5,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   server: { port: 5173, strictPort: true },//setting the port to 5173 and strictPort to true to avoid port conflicts
+  proxy: {
+    '/api': { target: 'http://localhost:8080' },
+},
 });
