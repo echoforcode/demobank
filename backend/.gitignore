@@ -15,6 +15,7 @@ target/
 compose.yaml
 pom.xml
 .application.properties
+.env
 
 ### IntelliJ IDEA ###
 .idea

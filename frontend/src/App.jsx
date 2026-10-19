@@ -8,13 +8,16 @@ import Dashboard from './pages/Dashboard.jsx';
 import { useSelector } from 'react-redux';
 import Spinner from './components/Spinner.jsx';
 import { selectSpinner } from './features/pageSlice.js';
-
+import ProtectedRoute from './pages/ProtectedRoute.jsx';
+//add the protected route to the dashboard page
 const router = createBrowserRouter([
 { path: '/', element: <Navigate to="/login" replace /> },
 { path: '/login', element: <Login /> },
 { path: '/signup', element: <Register /> },
 { path: '/successful', element: <RegisterSuccessful /> },
-{ path: '/dashboard', element: <Dashboard /> },
+{ path: '/dashboard', 
+    element: <ProtectedRoute><Dashboard /></ProtectedRoute>,
+ },
 ]);
 
 export default function App() {
