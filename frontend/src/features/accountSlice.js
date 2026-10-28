@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logout } from './usersSlice.js';
-import { fetchAccounts, createAccount } from './accountTasks.js';
+import { fetchAccounts, createAccount,findRecipient,transferFunds } from './accountTasks.js';
 
 const requestState = () => ({
     status: 'idle', error: null, requestId: null,
@@ -25,7 +25,7 @@ resetRecipient(state) {
 },
 extraReducers(builder) {
     const tasks = [
-        [fetchAccounts, 'load'], [createAccount, 'create'],
+        [fetchAccounts, 'load'], [createAccount, 'create'],[findRecipient, 'recipient'], [transferFunds, 'transfer']
     ];
     for (const [task, key] of tasks) {
         builder.addCase(task.pending, (state, action) => {
@@ -51,6 +51,16 @@ if (state.create.requestId !== action.meta.requestId) return;
     state.items = state.items.filter(item =>
     item.accountId !== action.payload.accountId);
     state.items.push(action.payload);
+});
+builder.addCase(findRecipient.fulfilled, (state, action) => {
+    if (state.recipient.requestId !== action.meta.requestId) return;
+    state.recipient.status = 'success';
+    state.recipient.value = action.payload;
+});
+builder.addCase(transferFunds.fulfilled, (state, action) => {
+    if (state.transfer.requestId !== action.meta.requestId) return;
+    state.transfer.status = 'success';
+    state.transfer.receipt = action.payload;
 });
 builder.addCase(logout, () => initialState());
 },
