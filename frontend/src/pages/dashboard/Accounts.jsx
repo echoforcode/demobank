@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAccounts } from '../../features/accountTasks.js';
 import SectionContainer from '../../components/SectionContainer.jsx';
 import { money } from '../../helper/money.js';
-import NewAccount from './NewAccount.jsx';
+import NewAccount from '../../components/account/NewAccount.jsx';
 
 export default function Accounts() {
     const { items, load } = useSelector(state => state.accounts);
