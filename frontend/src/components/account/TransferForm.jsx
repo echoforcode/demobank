@@ -57,4 +57,52 @@ export default function TransferForm({ account, onClose }) {
 // Only a failed transfer reaches here; the slice displays its error.
         }
 }
+return (
+    <SectionContainer title={`Transfer from ${code}`}
+        action={<button className="link" disabled={busy} onClick={onClose}>
+        Close
+        </button>}>
+            <p className="mb-4">Available: {money(account.balance, code)}</p>
+                {receipt ? (
+        <div role="status" className="space-y-2">
+            <p className="font-semibold text-green-800">Transfer completed.</p>
+            <p>Transaction: {receipt.transactionId}</p>
+            <p>Sent: {money(receipt.amount, code)}</p>
+            <p>Fee: {money(receipt.fee, code)}</p>
+            <p>New balance: {money(receipt.senderBalance, code)}</p>
+            {refreshWarning && <p>{refreshWarning}</p>}
+            <button className="link" onClick={onClose}>Done</button>
+        </div>
+    ) : (
+    <form onSubmit={submit} className="flex max-w-lg flex-col gap-4">
+    <InputComponent label="Recipient account number" name="recipientNumber"
+        value={number} onChange={event => setNumber(event.target.value)}
+        inputMode="numeric" maxLength={10} disabled={busy} />
+        {recipient.status === 'pending' && <p role="status">Finding recipient...</p>}
+        {found && <p>Recipient: {recipient.value.displayName}</p>}
+        {recipient.error && <p role="alert" className="text-red-700">
+        {recipient.error}
+        </p>}
+    <InputComponent label={`Amount (${code})`} name="transferAmount"
+        value={amount} onChange={event => setAmount(event.target.value)}
+        inputMode="decimal" disabled={!found || busy} />
+        <p className="text-sm text-slate-600">
+        {code === 'JPY' ? 'Use whole yen.' : 'Use up to two decimal places.'}
+        {' '}A 1% fee is added to the amount.
+        </p>
+            {cost && <p>Estimated fee: {money(cost.fee, code)};
+            {' '}total debit: {money(cost.total, code)}</p>}
+            {cost && cost.total.gt(account.balance) && (
+        <p className="text-red-700">Insufficient funds including the fee.</p>
+)}
+            {transfer.error && <p role="alert" className="text-red-700">
+            {transfer.error} If the outcome is uncertain, check balances first.
+        </p>}
+        <button className="primary" disabled={!canSend}>
+            {busy ? 'Sending...' : 'Send transfer'}
+        </button>
+        </form>
+)}
+    </SectionContainer>
+);
 }
