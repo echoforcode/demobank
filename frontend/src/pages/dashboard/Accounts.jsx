@@ -5,6 +5,7 @@ import { fetchAccounts } from '../../features/accountTasks.js';
 import SectionContainer from '../../components/SectionContainer.jsx';
 import { money } from '../../helper/money.js';
 import NewAccount from '../../components/account/NewAccount.jsx';
+import TransferForm from '../../components/account/TransferForm.jsx';
 
 export default function Accounts() {
     const { items, load } = useSelector(state => state.accounts);
@@ -40,6 +41,10 @@ return (
     <div className="space-y-3">
         <h3 className="text-lg font-semibold">{account.label}</h3>
         <p>Account number: {account.accountNumber}</p>
+        <button className="link" type="button"
+            onClick={() => setParams({ currency: account.code, transfer: '1' })}>
+            Transfer funds
+        </button>
         <p className="text-3xl font-bold">
             {money(account.balance, account.code)}
         </p>
@@ -49,6 +54,10 @@ return (
             onClick={() => dispatch(fetchAccounts())}>Refresh accounts</button>
         </SectionContainer>
         {showCreate && <NewAccount onClose={() => setShowCreate(false)} />}
+        {params.get('transfer') === '1' && account && (
+        <TransferForm key={account.accountId} account={account}
+            onClose={() => setParams({ currency: account.code })} />
+            )}
     </div>
 );
 }
