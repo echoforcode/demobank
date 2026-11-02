@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logout } from './usersSlice.js';
-import { fetchAccounts, createAccount,findRecipient,transferFunds } from './accountTasks.js';
+import { fetchAccounts, createAccount,findRecipient,transferFunds,getExchangeRate, convertCurrency } from './accountTasks.js';
 
 const requestState = () => ({
     status: 'idle', error: null, requestId: null,
@@ -25,7 +25,7 @@ resetRecipient(state) {
 },
 extraReducers(builder) {
     const tasks = [
-        [fetchAccounts, 'load'], [createAccount, 'create'],[findRecipient, 'recipient'], [transferFunds, 'transfer']
+        [fetchAccounts, 'load'], [createAccount, 'create'],[findRecipient, 'recipient'], [transferFunds, 'transfer'],[getExchangeRate, 'rates'], [convertCurrency, 'conversion'],
     ];
     for (const [task, key] of tasks) {
         builder.addCase(task.pending, (state, action) => {
@@ -62,7 +62,17 @@ builder.addCase(transferFunds.fulfilled, (state, action) => {
     state.transfer.status = 'success';
     state.transfer.receipt = action.payload;
 });
-builder.addCase(logout, () => initialState());
+builder.addCase(getExchangeRate.fulfilled, (state, action) => {
+if (state.rates.requestId !== action.meta.requestId) return;
+state.rates.status = 'success';
+state.rates.snapshot = action.payload;
+});
+builder.addCase(convertCurrency.fulfilled, (state, action) => {
+    if (state.conversion.requestId !== action.meta.requestId) return;
+    state.conversion.status = 'success';
+    state.conversion.receipt = action.payload;
+});
+    builder.addCase(logout, () => initialState());
 },
 });
 export const { resetRecipient }= slice.actions;

@@ -1,6 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { bankRequest } from '../api/bankRequest.js';
 
+export const getExchangeRate = createAsyncThunk(
+    'accounts/rates',
+    (_, thunk) => bankRequest(thunk, { url: '/accounts/rate' }),
+    {
+        condition: (_, { getState }) =>
+        getState().accounts.rates.status !== 'pending',
+    },
+);
+export const convertCurrency = createAsyncThunk(
+    'accounts/convert',
+    (details, thunk) => bankRequest(thunk, {
+    method: 'post', url: '/accounts/convert', data: details,
+}),
+);
 export const findRecipient = createAsyncThunk(
     'accounts/findRecipient',
     (details, thunk) => bankRequest(thunk, {
