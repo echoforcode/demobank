@@ -11,6 +11,7 @@ import Home from './pages/dashboard/Home.jsx';
 import Accounts from './pages/dashboard/Accounts.jsx';
 import Payments from './pages/dashboard/Payments.jsx';
 import Convert from './pages/dashboard/Convert.jsx';
+import Card from './pages/dashboard/Card.jsx';
 import Placeholder from './components/Placeholder.jsx';
 import Spinner from './components/Spinner.jsx';
 import { selectSpinner } from './features/pageSlice.js';
@@ -28,6 +29,7 @@ const router = createBrowserRouter([
                     { path: 'accounts', element: <Accounts /> },
                     { path: 'payments', element: <Payments /> },
                     { path: 'convert', element: <Convert /> },
+                    { path: 'cards', element: <Card /> },
                     ...['transactions', 'cards', 'profile', 'settings'].map(path => ({
                         path,
                         element: <Placeholder title={path} />,

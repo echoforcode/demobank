@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchAccounts } from '../features/accountTasks.js';
+import { fetchCard } from '../features/cardSlice.js';
 import Header from '../components/dashboard/Header.jsx';
 import NavBar from '../components/dashboard/NavBar.jsx';
 
@@ -9,6 +10,7 @@ export default function Dashboard() {
 const dispatch = useDispatch();
 useEffect(() => {
     dispatch(fetchAccounts());
+    dispatch(fetchCard());
     }, [dispatch]);
 return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
