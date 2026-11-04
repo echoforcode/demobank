@@ -6,6 +6,7 @@ import SectionContainer from '../../components/SectionContainer.jsx';
 import { money } from '../../helper/money.js';
 import NewAccount from '../../components/account/NewAccount.jsx';
 import TransferForm from '../../components/account/TransferForm.jsx';
+import HistoryPanel from '../../components/transactions/HistoryPanel.jsx';
 
 export default function Accounts() {
     const { items, load } = useSelector(state => state.accounts);
@@ -58,6 +59,8 @@ return (
         <TransferForm key={account.accountId} account={account}
             onClose={() => setParams({ currency: account.code })} />
             )}
+        {account && <HistoryPanel key={account.accountId}
+            scope="account" id={account.accountId} title={`${account.code} history`} />}    
     </div>
 );
 }

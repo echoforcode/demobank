@@ -8,6 +8,7 @@ import CreateCard from '../../components/card/CreateCard.jsx';
 import CardImage from '../../components/card/CardImage.jsx';
 import CardFundForm from '../../components/card/CardFundForm.jsx';
 import CardWithdrawForm from '../../components/card/CardWithdrawForm.jsx';
+import HistoryPanel from '../../components/transactions/HistoryPanel.jsx';
 
 export default function Card() {
     const dispatch = useDispatch();
@@ -48,6 +49,8 @@ export default function Card() {
                 onClose={() => setShowFundCardForm(false)} />}
             {card && showWithdrawForm && <CardWithdrawForm userCard={card}
                 onClose={() => setShowWithdrawForm(false)} />}
+            {card && <HistoryPanel key={card.cardId} scope="card" id={card.cardId}
+                title="Card transactions" />}
     </div>
 );
 }
