@@ -23,7 +23,9 @@ DemoBank is a full-stack banking application featuring user authentication, acco
 
 ## 🖥️ Application Preview
 
-<!-- Add dashboard screenshots here -->
+<p align="center">
+  <img src="./assets/preview.png" width="600">
+</p>
 
 ## 🛠️ Tech Stack
 
