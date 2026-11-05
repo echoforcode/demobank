@@ -57,7 +57,9 @@ DemoBank is a full-stack banking application featuring user authentication, acco
 
 ## 📁 Project Structure
 
-<!-- Repository directory tree goes here -->
+<p align="center">
+  <img src="./assets/system architecture.png" width="700">
+</p>
 
 ## 🚀 Getting Started
 
