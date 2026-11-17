@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { authenticateUser, resetStatus } from '../features/usersSlice.js';
 import { openSpinner, closeSpinner } from '../features/pageSlice.js';
-import AuthLayout from '../components/AuthLayout.jsx';
-import InputComponent from '../components/InputComponent.jsx';
+import LoginView from '../components/LoginView.jsx';
 //apply the registration pattern to login
 export default function Login() {
     const [form, setForm] = useState({ username: '', password: '' });
@@ -35,19 +34,12 @@ export default function Login() {
     }
     }
 return (
-    <AuthLayout title="Log in to your account"
-    footer={<Link className="link" to="/signup">Create an account</Link>}>
-    <form onSubmit={submit} className="flex flex-col gap-5">
-        <InputComponent label="Email" name="username" type="email"
-            value={form.username} onChange={change} autoComplete="username" />
-        <InputComponent label="Password" name="password" type="password"
-            value={form.password} onChange={change}
-        autoComplete="current-password" />
-        {error && <p role="alert" className="text-red-700">{error}</p>}
-        <button className="primary" type="submit"
-            disabled={status === 'pending' || !form.username.trim()
-            || !form.password}>Log in</button>
-    </form>
-    </AuthLayout>
+    <LoginView
+        form={form}
+        onChange={change}
+        onSubmit={submit}
+        status={status}
+        error={error}
+  />
 );
 }
