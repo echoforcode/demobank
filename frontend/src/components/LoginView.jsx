@@ -10,33 +10,10 @@ import {
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
-import '@fontsource/domine/400.css';
-import '@fontsource/domine/500.css';
-import '@fontsource/domine/600.css';
-import '@fontsource/domine/700.css';
+import fdomine from '../theme/fdomine';
 
 // DemoBank branding
-const bankTheme = createTheme({
-  palette: {
-    primary: { main: '#12518A' },
-  },
-  typography: {
-    fontFamily: '"Domine", Arial, sans-serif',
-    h3: {
-      fontWeight: 700,
-      letterSpacing: '-0.03em',
-    },
-    h4: {
-      fontWeight: 700,
-      letterSpacing: '-0.02em',
-    },
-    button: {
-      fontWeight: 600,
-      textTransform: 'none',
-    },
-  },
-  shape: { borderRadius: 12 },
-});
+
 
 export default function LoginView({
   form,
@@ -46,7 +23,7 @@ export default function LoginView({
   error,
 }) {
   return (
-    <ThemeProvider theme={bankTheme}>
+    <ThemeProvider theme={fdomine}>
       <Box
         component="main"
         sx={{
