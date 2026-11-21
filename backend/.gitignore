@@ -13,7 +13,6 @@ target/
 .springBeans
 .sts4-cache
 compose.yaml
-pom.xml
 .application.properties
 .env
 
