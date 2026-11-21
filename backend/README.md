@@ -11,9 +11,10 @@
 
 docker compose exec -T db psql -U bank_dev -d bank_db \
 -v ON_ERROR_STOP=1 < sql/conversion-type.sql
-
+5. run the application
 set -a
 source .env
 set +a
 ./mvnw spring-boot:run
 
+6. run unittest
