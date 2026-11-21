@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { currencyInfo } from '../../helper/currencies.js';
 import { money } from '../../helper/money.js';
-
+//change accounttile name to first letter capital
 export default function AccountTile({ account }) {
 const info = currencyInfo(account.code);
 return (
